@@ -1,0 +1,32 @@
+ML_config:
+  model_args:
+    num_classes: 10
+  train_config:
+    epochs: 3
+    lr: 0.0001
+    train_bs: 128
+  test_config:
+    test_bs: 128
+  initial_model_path: initial_models
+  dataset_dir: /home/acm-ws-darts/fedml/CIFAR10_dirichlet0.05_12
+  dataset_id: CIFAR10_dirichlet0.05_12
+  model_file_path: models/MobileNetV2.py
+  model_id: MobileNetV2_Model
+
+FL_config:
+  Agg_algo: fedavg
+  Agg_args: None
+  CS_algo: random
+  CS_args: None
+  clients_per_round: 3
+  total_num_clients: 12
+  total_rounds: 50
+
+client_config:
+  minibatch_time: 0
+
+server_config:
+  test_bs: 128
+  seed: 1201
+  use_gpu: false
+  save_path: ../results
